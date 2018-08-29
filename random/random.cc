@@ -30,6 +30,7 @@ int main() {
     char headStr[10] = "test_";
     for (int i = 0; i < 8; i++) {
         char tail[5];
+        //我看网上这个函数我包含的头文件都包含了，但是还是不能跑
         char *tail_char = itoa(i, tail, 10);
         texts.push_back(strcpy(headStr, tail_char));
     }
