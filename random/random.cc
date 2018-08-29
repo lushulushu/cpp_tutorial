@@ -1,10 +1,7 @@
 #include <vector>
 #include <cstdlib>
 #include <string>
-#include <cstring>
 #include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
 
 using namespace std;
 
@@ -29,10 +26,7 @@ int main() {
     std::vector<std::string> texts;
     char headStr[10] = "test_";
     for (int i = 0; i < 8; i++) {
-        char tail[5];
-        //我看网上这个函数我包含的头文件都包含了，但是还是不能跑
-        char *tail_char = itoa(i, tail, 10);
-        texts.push_back(strcpy(headStr, tail_char));
+        texts.push_back(headStr + to_string(i));
     }
     size_t count = 3;
     RandomSelectAndClean(&texts, count);
