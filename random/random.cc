@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <string>
 #include <string.h>
+#include <iostream>
 
 using namespace std;
 
@@ -10,6 +11,7 @@ bool RandomSelectAndClean(std::vector<std::string> *list, size_t count) {
     if (nullptr != list && !list->empty()) {
         ret = true;
         size_t size = list->size();
+        std::cout << "list[0] " << list[0].data() << std::endl;
         if (size > count) {
             for (size_t i = 0; i < count; ++i) {
                 std::srand(time(nullptr) + clock());
