@@ -21,5 +21,7 @@ add_executable(random random/random.cc)
 
 add_executable(vector_pointer vector_pointer/vector_pointer.cc)
 
+add_executable(bind bind/bind.cc)
+
 target_link_libraries(thread_safety utils)
 
