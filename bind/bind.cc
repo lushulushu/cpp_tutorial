@@ -32,12 +32,13 @@ int main(int argc, char* argv[])
     //instance.hello(str)
     f(str, d);
 
-    f = std::bind(&goodbye, std::placeholders::_1, std::placeholders::_2);
+    // switch params' position
+    auto f1 = std::bind(&goodbye, std::placeholders::_2, std::placeholders::_1);
     //goodbye(str, d)
-    f(str, d);
+    f1(d, str);
 
     std::cout << std::boolalpha << "--haha--" << "\n";
-    std::cout << std::is_bind_expression<decltype(f)>::value << '\n'; //输出不该是true吗？
+    std::cout << std::is_bind_expression<decltype(f1)>::value << '\n'; //输出不该是true吗？
 
     auto increase_int = std::bind (std::plus<int>(),std::placeholders::_1,1);
     std::cout << std::is_bind_expression<decltype(increase_int)>::value << '\n';
